@@ -1,0 +1,49 @@
+.nebula {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background: url('nebula.svg') no-repeat;
+  animation: spin 70s infinite linear;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 25px;
+  max-width: 500px;
+  font-size: 15px;
+
+  &__title {
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 48px;
+    letter-spacing: -0.2px;
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  &__resend-button {
+    margin: auto;
+    padding-left: 19px;
+    color: #0081db;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      margin-left: -28px;
+      width: 19px;
+      height: 19px;
+      background: url('resend.png') no-repeat;
+      background-size: 19px 19px;
+      content: '';
+      transition: all 400ms ease-out;
+      will-change: transform;
+    }
+
+    &:hover::before {
+      transform: rotate(-360deg) translateX(-0.5px);
+    }
+  }
+}

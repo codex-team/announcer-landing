@@ -1,0 +1,52 @@
+@import "animations.pcss";
+@import "vars.pcss";
+@import "form.pcss";
+@import "success.pcss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: var(--defaultFonts);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 15px 30px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 0 0 #E4E4E4;
+
+  @media only screen and (max-width: 1000px) {
+    padding: 15px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: -4px;
+    width: 187px;
+    height: 24px;
+    background-image: url('logo.png');
+    background-size: contain;
+  }
+}
+
+.dn {
+  display: none;
+}
+
+.userselect {
+  user-select: none;
+}
+
+.wobble {
+  animation-name: wobble;
+  animation-duration: 400ms;
+}
