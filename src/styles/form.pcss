@@ -49,9 +49,18 @@
     display: flex;
     padding: 10px;
 
+    @media (--mobile) {
+      flex-direction: column;
+      padding: 0;
+    }
+
     &__checkbox {
       display: flex;
       margin: auto auto auto 0;
+
+      @media (--mobile) {
+        margin-top: 15px;
+      }
 
       & label {
         margin: auto;
@@ -70,6 +79,10 @@
       border-radius: 100px;
       background: transparent;
       transition: all 250ms ease-out;
+
+      @media (--mobile) {
+        margin-top: 15px;
+      }
 
       &:hover {
         cursor: pointer;
@@ -95,7 +108,7 @@
       &--active {
         border-color: transparent;
         background: #5897EE;
-        box-shadow: 0 8px 4px -7px rgba(34,127,255,0.63);
+        box-shadow: 0 8px 4px -7px rgba(50, 159, 255, 0.54);
 
         & span {
           color: #fff;
