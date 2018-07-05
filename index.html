@@ -10,13 +10,29 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__logo">
+        <div class="header__logo"></div>
     </header>
 
     <div class="form" id="js-form">
         <p class="form__title">Send a message from <a class="deeplinker" href="https://t.me/itmoabitbot" data-app-link="tg://resolve?domain=itmoabitbot">@itmoabitbot</a> to all users</p>
         <form action="/?success=1" method="POST">
-            <textarea class="form__textarea" name="text" required></textarea>
+            <textarea class="form__textarea" name="text" required>
+*bold*
+
+_italic_
+
+[inline URL](https://ifmo.su)
+
+here is an `inline code`
+
+```
+preformatted
+  block
+    of
+      code
+```
+            </textarea>
+            <div class="form__preview"></div>
             <div class="form-confirmation">
                 <div class="form-confirmation__checkbox">
                     <span class="custom-checkbox">

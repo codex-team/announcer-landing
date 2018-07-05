@@ -2,6 +2,7 @@
  * Define modules
  */
 const deeplinker = require('@codexteam/deeplinker');
+const markdown = require("./slimdown");
 
 /**
  * Document ready function wrapper
@@ -18,7 +19,9 @@ const docReady = (f) => {
 const formListeners = () => {
   let checkBoxEl = document.querySelector('.custom-checkbox'),
       buttonEl = document.querySelector('.form-confirmation__button'),
-      confirmationEl = document.querySelector('.form-confirmation__checkbox');
+      confirmationEl = document.querySelector('.form-confirmation__checkbox'),
+      textarea = document.querySelector('.form__textarea'),
+      preview = document.querySelector('.form__preview');
 
   checkBoxEl.addEventListener('click', function (event) {
     let el = this;
@@ -26,6 +29,8 @@ const formListeners = () => {
     el.classList.toggle('custom-checkbox--active');
     buttonEl.classList.toggle('form-confirmation__button--active');
     el.checked = el.classList.contains('custom-checkbox--active');
+
+    preview.innerHTML = markdown.render(textarea.value);
   }, false);
 
   buttonEl.addEventListener('click', function (event) {
@@ -69,7 +74,7 @@ module.exports = (() => {
     deeplinker.init();
 
     console.info('Script is ready!');
-  }
+  };
 
   /**
    * Start script when page is loaded
